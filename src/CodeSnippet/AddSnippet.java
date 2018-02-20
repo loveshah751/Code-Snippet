@@ -63,6 +63,7 @@ public class AddSnippet extends HttpServlet {
     	  out.println("<option>Java</option>");
     	  out.println("<option>C</option>");
     	  out.println("<option >C++</option>");
+    	  out.println("<option >JavaScript</option>");
     	out.println("</select>");
     	  out.println("</div><br>");
     	  String messageerror= (String) request.getAttribute("CodeError");

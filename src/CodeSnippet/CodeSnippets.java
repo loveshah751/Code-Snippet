@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Demo.Form;
+//import Demo.Form;
 
 @WebServlet("/CodeSnippet/CodeSnippets")
 public class CodeSnippets extends HttpServlet {
@@ -30,7 +30,7 @@ public class CodeSnippets extends HttpServlet {
 			 
 				 if(entries.getId()==id)
 					 return entries;
-			
+				 
 			 return null;
 	
 	}
@@ -91,20 +91,21 @@ public class CodeSnippets extends HttpServlet {
 		out.println("</div>");
 		int id=Integer.parseInt(request.getParameter("id"));
 		SnippetData snippet=getSnippetid(id);
+		System.out.println("Id is "+snippet);
 		out.println("<div class=\"col-xs-9\">");
 		
 		                out.println("<div class=\"page-header\">");
 		                    out.println("<h3>"+ snippet.getTitle() +" <small>"+ snippet.getLanguage()+"</small></h3>");
 		                    // Search Div
-		                    out.println("<div class=\"page-right\">");
-		                    out.println("<h4>");
-		                    out.println("<input type=\"text\" name=\"search\" palceholder=\"Enter Name of snippet \">");
-	                        out.println("<small>");
-	                            out.println("<a class=\"btn btn-primary\" href=\"CodeSnippet?id="+snippet.getId() +"\">Search Snippet</a>");
-	                        out.println("</small>");
-	                    out.println("</h4>");
-	                    out.println("</div>");
-		                    out.println("<p class=\"pull-right\">");
+//		                    out.println("<div class=\"page-right\">");
+//		                    out.println("<h4>");
+//		                    out.println("<input type=\"text\" name=\"search\" palceholder=\"Enter Name of snippet \">");
+//	                        out.println("<small>");
+//	                            out.println("<a class=\"btn btn-primary\" href=\"CodeSnippet?id="+snippet.getId() +"\">Search Snippet</a>");
+//	                        out.println("</small>");
+//	                    out.println("</h4>");
+//	                    out.println("</div>");
+//		                    out.println("<p class=\"pull-right\">");
 		                        out.println("<a href=\"DeleteSnippet?id="+ snippet.getId()+ "\">Delete</a>");
 		                        out.println("<a href=\"EditSnippet?id="+snippet.getId() + "\">Edit</a>");
 		                    out.println("</p>");
